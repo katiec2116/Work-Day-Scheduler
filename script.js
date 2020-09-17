@@ -19,13 +19,16 @@ for (i = 9; i< 18; i++){
     var button = $("<button>");
     // middle column
     var textContent = $("<div>");
-    
+    // icon
+    var icon = $("<i>");
+
 
     // add classes to each element created  and format row width
     row.addClass("row");
     hour.addClass("col-md-1 time-block hour");
     button.addClass("saveBtn col-md-1");
     textContent.addClass("col-md-9 text");
+    icon.addClass("fas fa-save")
 
     // add value of hour in military time to the row
     row.attr("data-value", i);
@@ -61,6 +64,6 @@ for (i = 9; i< 18; i++){
     row.append(hour);
     row.append(textContent);
     row.append(button);
+    button.append(icon);
 }
 
-<i class="fas fa-save"></i>
