@@ -12,28 +12,32 @@ var currentHour = moment().hour();
 for (i = 9; i< 18; i++){
 
     // create row for each hour
-    var row = $("<form>");
+    var row = $("<div>");
     // first column
     var hour = $("<div>");
     // last column (button)
     var button = $("<button>");
     // middle column
-    var textContent = $("<div>");
+    var textColumn = $("<form>");
     // icon
     var icon = $("<i>");
+
+
+    // test
+    var myForm = $("<textarea>");
 
 
     // add classes to each element created  and format row width
     row.addClass("row");
     hour.addClass("col-md-1 time-block hour");
     button.addClass("saveBtn col-md-1");
-    textContent.addClass("col-md-9 text");
+    textColumn.addClass("col-md-9 text");
     icon.addClass("fas fa-save")
 
     // add value of hour in military time to the row
     row.attr("data-value", i);
     // add value of hour to the text content area to compare against current time
-    textContent.attr("data-value", i);
+    textColumn.attr("data-value", i);
 
 
     // compare against moment time and give background class accordingly
@@ -62,8 +66,9 @@ for (i = 9; i< 18; i++){
 
     $(".container").append(row);
     row.append(hour);
-    row.append(textContent);
+    row.append(textColumn);
     row.append(button);
     button.append(icon);
+    textColumn.append(myForm);
 }
 
