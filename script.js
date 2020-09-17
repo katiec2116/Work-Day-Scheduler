@@ -9,7 +9,7 @@ $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
 var currentHour = moment().hour();
 
 // Create  9 columns with 3 rows
-for (i = 9; i< 17; i++){
+for (i = 9; i< 18; i++){
 
     // create row for each hour
     var row = $("<form>");
@@ -26,8 +26,18 @@ for (i = 9; i< 17; i++){
     button.addClass("saveBtn col-md-1");
     textContent.addClass("col-md-9");
 
+    // add value of hour in military time to the row
     row.attr("data-value", i);
-    hour.text(i);
+    // convert from military time to regular time and add am/pm
+    if (i > 12){
+        hour.text(i -12 + " PM");
+        }
+        else if (i == 12){
+            hour.text(i + " PM")
+        }
+        else {
+            hour.text(i + " AM");
+        }
 
 
     $(".container").append(row);
