@@ -9,7 +9,7 @@ $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
 var currentHour = moment().hour();
 
 // Create  9 columns with 3 rows
-for (i = 0; i< 9; i++){
+for (i = 9; i< 17; i++){
 
     // create row for each hour
     var row = $("<form>");
@@ -26,6 +26,12 @@ for (i = 0; i< 9; i++){
     button.addClass("saveBtn col-md-1");
     textContent.addClass("col-md-9");
 
+    row.attr("data-value", i);
+    hour.text(i);
 
 
+    $(".container").append(row);
+    row.append(hour);
+    row.append(textContent);
+    row.append(button);
 }
