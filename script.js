@@ -19,16 +19,33 @@ for (i = 9; i< 18; i++){
     var button = $("<button>");
     // middle column
     var textContent = $("<div>");
+    
 
     // add classes to each element created  and format row width
     row.addClass("row");
     hour.addClass("col-md-1 time-block hour");
     button.addClass("saveBtn col-md-1");
-    textContent.addClass("col-md-9");
+    textContent.addClass("col-md-9 text");
 
     // add value of hour in military time to the row
     row.attr("data-value", i);
-    // convert from military time to regular time and add am/pm
+    // add value of hour to the text content area to compare against current time
+    textContent.attr("data-value", i);
+
+
+    // compare against moment time and give background class accordingly
+    if ($(".text").attr("data-value") == currentHour){
+        $(".text").addClass("present");
+    }
+    else if ($(".text").attr("data-value") > currentHour){
+        $(".text").addClass("future");
+    }
+    else if ($(".text").attr("data-value") < currentHour){
+        $(".text").addClass("past");
+    }
+
+
+    // convert from military time to regular time and add am/pm to display on the side
     if (i > 12){
         hour.text(i -12 + " PM");
         }
@@ -45,3 +62,5 @@ for (i = 9; i< 18; i++){
     row.append(textContent);
     row.append(button);
 }
+
+<i class="fas fa-save"></i>
