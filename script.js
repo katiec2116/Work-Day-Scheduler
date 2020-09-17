@@ -4,21 +4,18 @@
 
 
 $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
-
+// var saveBtn = $("<button>")
 
 var currentHour = moment().hour();
 
+// Create  9 columns with 3 rows
+for (i = 0; i< 9; i++){
+    // create row fo each hour and 3 columns
 
-$(".text").each(function(){
-    var hour = $(this).attr("data-value");
+    var row = $("<form>");
+    var hour = $("<div>");
+    var button = $("<button>");
+    var textContent = $("<div>");
 
-    if (hour == currentHour){
-        $(this).addClass("present")
-    }
-    else if (hour > currentHour){
-        $(this).addClass("future")
-    }
-    else {
-        $(this).addClass("past")
-    }
-})
+
+}
