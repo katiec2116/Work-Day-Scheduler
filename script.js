@@ -79,6 +79,18 @@
         }
     }
 
+    for( s = 0; s < localStorage.length; s++){
+        // get hour by getting the key a the index
+        var hourValue = localStorage.key(s);
+        // get value of our variable keyName
+        var formText = localStorage.getItem(hourValue);
+        // get rid of quotes
+        formText = formText.replace(/\"/g, "");
+        // get text area element with the id that matches the stored key 
+        // then set valu eof that textare = to the locally stored value
+        var storedInput = document.getElementById(hourValue);
+        storedInput.value = formText;
+    }
  
 
     // submit the form and save the text content for that hour
