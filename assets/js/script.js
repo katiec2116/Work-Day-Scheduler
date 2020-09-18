@@ -36,13 +36,9 @@
         myForm.addClass("plan");
         myForm.attr("id", i);
 
-
-        // add value of hour in military time to the row
-        row.attr("data-value", i);
         // add value of hour to the text content area to compare against current time
         textColumn.attr("data-value", i);
-        // add value of hour to the form content incase i need it?????????
-        myForm.attr("data-value", i);
+        // add value of hour to the button to store as key when clicked
         button.attr("data-value", i);
 
 
@@ -56,14 +52,14 @@
 
 
         // compare against moment time and give background class accordingly
-        if ($(".text").attr("data-value") == currentHour) {
-            $(".text").addClass("present");
+        if (textColumn.attr("data-value") == currentHour) {
+            textColumn.addClass("present");
         }
-        else if ($(".text").attr("data-value") > currentHour) {
-            $(".text").addClass("future");
+        else if (textColumn.attr("data-value") > currentHour) {
+            textColumn.addClass("future");
         }
         else  {
-            $(".text").addClass("past");
+            textColumn.addClass("past");
         }
 
 
@@ -102,8 +98,6 @@
         console.log(btnHour);
         // get the textarea value that has id = same hour
         var enteredData = document.getElementById(btnHour).value;
- 
-
         // Set the hour to the local storage key and then stringify 
         localStorage.setItem(btnHour, JSON.stringify(enteredData))
     })
