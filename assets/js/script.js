@@ -82,10 +82,10 @@
         var formText = localStorage.getItem(hourValue);
         // get rid of quotes
         formText = formText.replace(/\"/g, "");
-        // get text area element with the id that matches the stored key 
-        // then set valu eof that textare = to the locally stored value
-        var storedInput = document.getElementById(hourValue);
-        storedInput.value = formText;
+        // get text area element with the id that matches the stored key value
+        // set value of that textarea to the value from local storage
+        var storedPlans = document.getElementById(hourValue);
+        storedPlans.value = formText;
     }
  
 
