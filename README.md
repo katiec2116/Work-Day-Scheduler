@@ -1,7 +1,7 @@
 # Work-Day-Scheduler
 A simple calendar application that allows the user to save events for each hour of the day.
 
-https://katiec2116.github.io/Coding-Quiz-Challenge/
+https://katiec2116.github.io/Work-Day-Scheduler/
 
 ## Overview
 
@@ -25,6 +25,11 @@ MIT
 ## Tests
 
 No tests available
+
+
+## Questions?
+
+You can reach me at katiecampbel21@outlook.com
 
 ---
 
